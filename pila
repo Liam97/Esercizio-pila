@@ -1,0 +1,94 @@
+import java.util.Scanner;
+
+public class Esercizio_pila {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		
+		short scelta=-1;
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Inserire grandezza pila: ");
+		short N = input.nextShort();
+		
+		
+		Pila pila = new Pila(N);
+		short i=0;
+		
+		 do{
+			
+			
+			System.out.println("Inserire 1 per immettere un valore nella pila");
+		    System.out.println("Inserire 2 per prelevare l'ultimo valore immesso");
+		    System.out.println("Inserire 0 per chiudere");
+		    scelta = input.nextShort();
+		
+			if (scelta == 1){
+				
+				i=pila.push(i);
+			}
+			
+			if (scelta==2){
+				
+				i=pila.pop(i);
+			}
+		 
+		 }while (scelta!=0);
+		 
+		 input.close();
+	}
+
+}
+
+//Nella classe pila
+
+import java.util.Scanner;
+
+public class Pila {
+
+	public Pila(short n) {
+		p = new String [n];
+		N = n;
+	}
+
+	String p[];
+	short N;
+	Scanner input = new Scanner(System.in);
+	
+	public short push(short i){
+		
+		if (i!=N){
+		System.out.println("Inserire l'elemento n. "+i);
+		p[i]=input.nextLine();
+		i++;}
+		
+		if (i==N){
+			System.out.println("Pila piena.");
+			
+		}
+		return i;
+	}
+		
+	
+	public short pop(short i){
+		
+		if (i!=0){
+			i--;
+		System.out.println("\nL'elemento prelevato n. "+i+" è: "+p[i]);
+		if (i==0) System.out.println("\n La pila è vuota.");}
+		else{
+			System.out.println("\nLa pila è vuota.");
+		}
+		
+		
+		
+		return i;
+	}
+	
+}
+
+
+
+
