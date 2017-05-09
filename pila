@@ -20,8 +20,9 @@ public class Esercizio_pila {
 		 do{
 			
 			
-			System.out.println("Inserire 1 per immettere un valore nella pila");
+			System.out.println("\nInserire 1 per immettere un valore nella pila");
 		    System.out.println("Inserire 2 per prelevare l'ultimo valore immesso");
+		    System.out.println("Inserire 3 per stampare la pila");
 		    System.out.println("Inserire 0 per chiudere");
 		    scelta = input.nextShort();
 		
@@ -35,12 +36,18 @@ public class Esercizio_pila {
 				i=pila.pop(i);
 			}
 		 
+			if (scelta==3){
+				
+				pila.stampa(i);
+			}
+			
 		 }while (scelta!=0);
 		 
 		 input.close();
 	}
 
 }
+
 
 //Nella classe pila
 
@@ -77,9 +84,10 @@ public class Pila {
 		if (i!=0){
 			i--;
 		System.out.println("\nL'elemento prelevato n. "+i+" è: "+p[i]);
-		if (i==0) System.out.println("\n La pila è vuota.");}
+		p[i]=null;
+		if (i==0) System.out.print("\n La pila è vuota.");}
 		else{
-			System.out.println("\nLa pila è vuota.");
+			System.out.print("\nLa pila è vuota.");
 		}
 		
 		
@@ -87,8 +95,17 @@ public class Pila {
 		return i;
 	}
 	
+	public void stampa(short i){
+		
+		System.out.print("\nPila: ");
+		
+		for(i=0;i<N;i++){
+		
+			System.out.print("\t"+p[i]);
+			
+		}
+		
+		
+	}
+	
 }
-
-
-
-
